@@ -1,3 +1,3 @@
 # GitHub Profile Card
 
-## Created using React and GitHub API
+Created using React and GitHub API
