@@ -1,7 +1,18 @@
-.container-card {
-  width: 450px;
-  height: 450px;
+.card {
+  width: 420px;
+  height: 30rem;
   margin: auto;
-  padding: 24px;
-  border: 1px solid #ccc;
+  box-shadow: 0px 0px 8px 0px #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__user-info {
+  height: 20rem;
+  background-color: #ffffff;
+}
+
+.card__user-stats {
+  height: 10rem;
+  background: linear-gradient(150deg, #333, #000);
 }
