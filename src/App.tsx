@@ -1,10 +1,13 @@
 import React from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import ProfileCard from './ProfileCard/ProfileCard';
 
 const App = () => {
   return (
-    <div>
-      <h1>Hello World!</h1>
-    </div>
+    <section className="profile-card__container">
+      <ProfileCard />
+    </section>
   );
 };
 
