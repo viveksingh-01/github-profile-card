@@ -59,7 +59,9 @@ const ProfileCard = () => {
   return (
     <div className="card">
       <div className="card__user-info">
-        <img className="user-avatar__img" src={userInfo?.avatar_url} alt="" />
+        <div className="user-avatar">
+          <img className="user-avatar__img" src={userInfo?.avatar_url} alt="" />
+        </div>
         <div className="user-info__text">
           <h4 className="user-info__name">{userInfo?.name}</h4>
           <h5 className="user-info__location">{userInfo?.location}</h5>
