@@ -1,4 +1,5 @@
 import axios from 'axios';
+import numeral from 'numeral';
 import React, { useEffect, useState } from 'react';
 import './ProfileCard.css';
 
@@ -47,20 +48,34 @@ const ProfileCard = () => {
     }
   };
 
+  const getNumeralFormat = (num: number): string => {
+    let format = '0.0a';
+    if (num < 1000) {
+      format = '0a';
+    }
+    return format;
+  };
+
   return (
     <div className="card">
       <div className="card__user-info"></div>
       <div className="card__user-stats">
         <div className="text-center">
-          <h5 className="stats__number">{userInfo?.public_repos}</h5>
+          <h5 className="stats__number">
+            {numeral(userInfo?.public_repos).format(getNumeralFormat(userInfo?.public_repos))}
+          </h5>
           <p className="stats__text">Repositories</p>
         </div>
         <div className="text-center">
-          <h5 className="stats__number">{userInfo?.followers}</h5>
+          <h5 className="stats__number">
+            {numeral(userInfo?.followers).format(getNumeralFormat(userInfo?.followers))}
+          </h5>
           <p className="stats__text">Followers</p>
         </div>
         <div className="text-center">
-          <h5 className="stats__number">{userInfo?.following}</h5>
+          <h5 className="stats__number">
+            {numeral(userInfo?.following).format(getNumeralFormat(userInfo?.following))}
+          </h5>
           <p className="stats__text">Following</p>
         </div>
       </div>
