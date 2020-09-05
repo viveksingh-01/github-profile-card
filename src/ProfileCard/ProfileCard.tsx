@@ -60,6 +60,12 @@ const ProfileCard = () => {
     <div className="card">
       <div className="card__user-info">
         <img className="user-avatar__img" src={userInfo?.avatar_url} alt="" />
+        <div className="user-info__text">
+          <h4 className="user-info__name">{userInfo?.name}</h4>
+          <h5 className="user-info__location">{userInfo?.location}</h5>
+          {userInfo?.company && <h5 className="user-info__company">{userInfo?.company}</h5>}
+          {userInfo?.bio && <p className="text-muted user-info__bio">"{userInfo?.bio}"</p>}
+        </div>
       </div>
       <div className="card__user-stats">
         <div className="text-center">
