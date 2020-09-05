@@ -58,7 +58,9 @@ const ProfileCard = () => {
 
   return (
     <div className="card">
-      <div className="card__user-info"></div>
+      <div className="card__user-info">
+        <img className="user-avatar__img" src={userInfo?.avatar_url} alt="" />
+      </div>
       <div className="card__user-stats">
         <div className="text-center">
           <h5 className="stats__number">

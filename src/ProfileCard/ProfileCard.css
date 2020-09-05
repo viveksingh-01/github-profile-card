@@ -8,6 +8,10 @@
 }
 
 .card__user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 24rem;
   background-color: #ffffff;
 }
@@ -18,6 +22,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.user-avatar__img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
 }
 
 .stats__number {
