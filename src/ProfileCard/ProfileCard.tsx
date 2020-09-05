@@ -50,7 +50,20 @@ const ProfileCard = () => {
   return (
     <div className="card">
       <div className="card__user-info"></div>
-      <div className="card__user-stats"></div>
+      <div className="card__user-stats">
+        <div className="text-center">
+          <h5 className="stats__number">{userInfo?.public_repos}</h5>
+          <p className="stats__text">Repositories</p>
+        </div>
+        <div className="text-center">
+          <h5 className="stats__number">{userInfo?.followers}</h5>
+          <p className="stats__text">Followers</p>
+        </div>
+        <div className="text-center">
+          <h5 className="stats__number">{userInfo?.following}</h5>
+          <p className="stats__text">Following</p>
+        </div>
+      </div>
     </div>
   );
 };
