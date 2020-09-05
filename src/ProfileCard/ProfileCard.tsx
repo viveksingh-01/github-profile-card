@@ -64,7 +64,7 @@ const ProfileCard = () => {
         </div>
         <div className="user-info__text">
           <h4 className="user-info__name">{userInfo?.name}</h4>
-          <h5 className="user-info__location">{userInfo?.location}</h5>
+          <h6 className="user-info__location">{userInfo?.location}</h6>
           {userInfo?.company && <h5 className="user-info__company">{userInfo?.company}</h5>}
           {userInfo?.bio && <p className="text-muted user-info__bio">"{userInfo?.bio}"</p>}
         </div>
