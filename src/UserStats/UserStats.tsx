@@ -2,7 +2,9 @@ import numeral from 'numeral';
 import React from 'react';
 import './UserStats.css';
 
-const UserStats = ({ repos, followers, following }: { repos: number; followers: number; following: number }) => {
+const UserStats = ({ userStats }: { userStats: { public_repos: number; followers: number; following: number } }) => {
+  const { public_repos, followers, following } = userStats;
+
   const getNumeralFormat = (num: number): string => {
     let format = '0.0a';
     if (num < 1000) {
@@ -14,7 +16,7 @@ const UserStats = ({ repos, followers, following }: { repos: number; followers: 
   return (
     <div className="user-stats">
       <div className="text-center">
-        <h5 className="stats__number">{numeral(repos).format(getNumeralFormat(repos))}</h5>
+        <h5 className="stats__number">{numeral(public_repos).format(getNumeralFormat(public_repos))}</h5>
         <p className="stats__text">Repositories</p>
       </div>
       <div className="text-center">

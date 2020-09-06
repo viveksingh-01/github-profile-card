@@ -1,17 +1,22 @@
 import React from 'react';
 import './UserInfo.css';
 
-const UserInfo = ({ userData }: { userData: any }) => {
+const UserInfo = ({
+  userInfo
+}: {
+  userInfo: { name: string; avatar_url: string; location: string; company: string; bio: string };
+}) => {
+  const { name, avatar_url, location, company, bio } = userInfo;
   return (
     <div className="user-info">
       <div className="user-avatar">
-        <img className="user-avatar__img" src={userData?.avatar_url} alt="" />
+        <img className="user-avatar__img" src={avatar_url} alt="" />
       </div>
       <div className="user-info__text">
-        <h4 className="user-info__name">{userData?.name}</h4>
-        <h6 className="user-info__location">{userData?.location}</h6>
-        {userData?.company && <h5 className="user-info__company">{userData?.company}</h5>}
-        {userData?.bio && <p className="text-muted user-info__bio">"{userData?.bio}"</p>}
+        <h4 className="user-info__name">{name}</h4>
+        <h6 className="user-info__location">{location}</h6>
+        {company && <h5 className="user-info__company">{company}</h5>}
+        {bio && <p className="text-muted user-info__bio">"{bio}"</p>}
       </div>
     </div>
   );

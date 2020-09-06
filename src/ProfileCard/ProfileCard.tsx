@@ -5,7 +5,8 @@ import UserStats from '../UserStats/UserStats';
 import './ProfileCard.css';
 
 const ProfileCard = () => {
-  const [userData, setUserData] = useState();
+  const [userInfo, setUserInfo] = useState();
+  const [userStats, setUserStats] = useState();
   useEffect(() => {
     const username = 'buckyroberts';
     fetchUserData(username);
@@ -30,16 +31,18 @@ const ProfileCard = () => {
           following_url
         }
       } = await axios.get(`${URL}/${username}`);
-      setUserData({
+      setUserInfo({
         name,
         location,
         bio,
         company,
+        avatar_url,
+        html_url
+      });
+      setUserStats({
         public_repos,
         followers,
         following,
-        avatar_url,
-        html_url,
         repos_url,
         followers_url,
         following_url
@@ -49,12 +52,12 @@ const ProfileCard = () => {
     }
   };
 
-  return userData ? (
+  return (
     <div className="card">
-      <UserInfo userData={userData} />
-      <UserStats repos={userData.public_repos} followers={userData.followers} following={userData.following} />
+      {userInfo && <UserInfo userInfo={userInfo} />}
+      {userStats && <UserStats userStats={userStats} />}
     </div>
-  ) : null;
+  );
 };
 
 export default ProfileCard;
