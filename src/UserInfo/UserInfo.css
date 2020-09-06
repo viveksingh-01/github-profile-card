@@ -24,6 +24,8 @@
 .user-info__text {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 12rem;
   text-align: center;
 }
 
