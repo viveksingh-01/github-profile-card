@@ -1,18 +1,19 @@
 .user-stats {
-  height: 6rem;
   background: linear-gradient(150deg, #333, #000);
+  border-radius: 0 0 12px 12px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 6rem;
 }
 
 .stats__number {
   color: #ffffff;
-  font-size: 1.5rem;
+  margin: 0 !important;
 }
 
 .stats__text {
-  color: #eeeeee;
+  color: #cccccc;
   font-size: 0.75rem;
   margin: 0 !important;
 }
