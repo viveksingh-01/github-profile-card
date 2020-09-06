@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import SearchBox from '../SearchBox/SearchBox';
 import UserInfo from '../UserInfo/UserInfo';
 import UserStats from '../UserStats/UserStats';
 import './ProfileCard.css';
@@ -53,9 +54,12 @@ const ProfileCard = () => {
   };
 
   return (
-    <div className="card">
-      {userInfo && <UserInfo userInfo={userInfo} />}
-      {userStats && <UserStats userStats={userStats} />}
+    <div>
+      <SearchBox />
+      <section className="card">
+        {userInfo && <UserInfo userInfo={userInfo} />}
+        {userStats && <UserStats userStats={userStats} />}
+      </section>
     </div>
   );
 };
