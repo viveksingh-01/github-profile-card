@@ -7,6 +7,7 @@ const SearchBox = ({ fetchUserData }: { fetchUserData: any }) => {
   const handleSubmission = (e: FormEvent) => {
     e.preventDefault();
     fetchUserData(username);
+    setUsername('');
   };
 
   return (
@@ -16,6 +17,7 @@ const SearchBox = ({ fetchUserData }: { fetchUserData: any }) => {
           type="text"
           className="form-control search-box__input"
           placeholder="Enter username + press Enter"
+          value={username}
           onChange={e => setUsername(e.target.value)}
         />
       </form>
