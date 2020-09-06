@@ -22,16 +22,16 @@ const UserInfo = ({
           {location}
         </h6>
         {company && (
-          <h5 className="user-info__company">
+          <h6 className="user-info__company">
             <FontAwesomeIcon icon={faBuilding} size={'1x'} className="mr-2" />
             {company}
-          </h5>
+          </h6>
         )}
         {bio && (
           <p className="text-muted user-info__bio">
-            <FontAwesomeIcon icon={faQuoteLeft} size={'1x'} className="mr-2" />
+            <FontAwesomeIcon icon={faQuoteLeft} className="mr-2" />
             {bio}
-            <FontAwesomeIcon icon={faQuoteRight} size={'1x'} className="ml-2" />
+            <FontAwesomeIcon icon={faQuoteRight} className="ml-2" />
           </p>
         )}
       </div>
