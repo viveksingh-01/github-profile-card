@@ -1,6 +1,6 @@
 import axios from 'axios';
-import numeral from 'numeral';
 import React, { useEffect, useState } from 'react';
+import UserStats from '../UserStats/UserStats';
 import './ProfileCard.css';
 
 const ProfileCard = () => {
@@ -48,15 +48,7 @@ const ProfileCard = () => {
     }
   };
 
-  const getNumeralFormat = (num: number): string => {
-    let format = '0.0a';
-    if (num < 1000) {
-      format = '0a';
-    }
-    return format;
-  };
-
-  return (
+  return userInfo ? (
     <div className="card">
       <div className="card__user-info">
         <div className="user-avatar">
@@ -69,28 +61,9 @@ const ProfileCard = () => {
           {userInfo?.bio && <p className="text-muted user-info__bio">"{userInfo?.bio}"</p>}
         </div>
       </div>
-      <div className="card__user-stats">
-        <div className="text-center">
-          <h5 className="stats__number">
-            {numeral(userInfo?.public_repos).format(getNumeralFormat(userInfo?.public_repos))}
-          </h5>
-          <p className="stats__text">Repositories</p>
-        </div>
-        <div className="text-center">
-          <h5 className="stats__number">
-            {numeral(userInfo?.followers).format(getNumeralFormat(userInfo?.followers))}
-          </h5>
-          <p className="stats__text">Followers</p>
-        </div>
-        <div className="text-center">
-          <h5 className="stats__number">
-            {numeral(userInfo?.following).format(getNumeralFormat(userInfo?.following))}
-          </h5>
-          <p className="stats__text">Following</p>
-        </div>
-      </div>
+      <UserStats repos={userInfo.public_repos} followers={userInfo.followers} following={userInfo.following} />
     </div>
-  );
+  ) : null;
 };
 
 export default ProfileCard;

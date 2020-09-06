@@ -17,13 +17,7 @@
   background-color: #ffffff;
 }
 
-.card__user-stats {
-  height: 6rem;
-  background: linear-gradient(150deg, #333, #000);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+
 
 .user-avatar {
   box-shadow: inset 0px 0px 8px 2px #ccc;
@@ -65,13 +59,3 @@
   align-self: flex-end;
 }
 
-.stats__number {
-  color: #ffffff;
-  font-size: 1.5rem;
-}
-
-.stats__text {
-  color: #eeeeee;
-  font-size: 0.75rem;
-  margin: 0 !important;
-}
