@@ -17,21 +17,7 @@ const ProfileCard = () => {
     const URL = 'https://api.github.com/users';
     try {
       const {
-        data: {
-          name,
-          login,
-          location,
-          bio,
-          company,
-          public_repos,
-          followers,
-          following,
-          avatar_url,
-          html_url,
-          repos_url,
-          followers_url,
-          following_url
-        }
+        data: { name, login, location, bio, company, public_repos, followers, following, avatar_url, html_url }
       } = await axios.get(`${URL}/${username}`);
       setUserInfo({
         name,
@@ -46,9 +32,7 @@ const ProfileCard = () => {
         public_repos,
         followers,
         following,
-        repos_url,
-        followers_url,
-        following_url
+        html_url
       });
     } catch (error) {
       console.log(error);
