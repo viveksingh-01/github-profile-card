@@ -35,6 +35,15 @@
   margin: 1.5rem 0 0.5rem !important;
 }
 
+.user--profile__link {
+  color: #000 !important;
+  text-decoration: none;
+}
+
+.user--profile__link:hover {
+  text-decoration: none;
+}
+
 .user-info__location {
   color: #006cd9;
   font-weight: bold;

@@ -9,7 +9,7 @@ const ProfileCard = () => {
   const [userInfo, setUserInfo] = useState();
   const [userStats, setUserStats] = useState();
   useEffect(() => {
-    const username = 'buckyroberts';
+    const username = 'viveksingh-01';
     fetchUserData(username);
   }, []);
 
@@ -19,6 +19,7 @@ const ProfileCard = () => {
       const {
         data: {
           name,
+          login,
           location,
           bio,
           company,
@@ -38,7 +39,8 @@ const ProfileCard = () => {
         bio,
         company,
         avatar_url,
-        html_url
+        html_url,
+        login
       });
       setUserStats({
         public_repos,
