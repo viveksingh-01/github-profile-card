@@ -7,55 +7,5 @@
   flex-direction: column;
 }
 
-.card__user-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 30rem;
-  padding: 1rem;
-  background-color: #ffffff;
-}
 
-
-
-.user-avatar {
-  box-shadow: inset 0px 0px 8px 2px #ccc;
-  padding: 15px;
-  border-radius: 50%;
-}
-
-.user-avatar__img {
-  width: 12rem;
-  height: 12rem;
-  border-radius: 50%;
-  /* box-shadow: 0px 0px 6px 0px #000000; */
-}
-
-.user-info__text {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.user-info__name {
-  font-weight: bold;
-  margin-top: 1.5rem;
-}
-
-.user-info__location {
-  color: #006cd9;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.user-info__company {
-  font-weight: 300;
-  margin: 1rem 0;
-}
-
-.user-info__bio {
-  margin: 0 !important;
-  align-self: flex-end;
-}
 

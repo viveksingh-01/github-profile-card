@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import UserInfo from '../UserInfo/UserInfo';
 import UserStats from '../UserStats/UserStats';
 import './ProfileCard.css';
 
 const ProfileCard = () => {
-  const [userInfo, setUserInfo] = useState();
+  const [userData, setUserData] = useState();
   useEffect(() => {
     const username = 'buckyroberts';
     fetchUserData(username);
@@ -29,7 +30,7 @@ const ProfileCard = () => {
           following_url
         }
       } = await axios.get(`${URL}/${username}`);
-      setUserInfo({
+      setUserData({
         name,
         location,
         bio,
@@ -48,20 +49,10 @@ const ProfileCard = () => {
     }
   };
 
-  return userInfo ? (
+  return userData ? (
     <div className="card">
-      <div className="card__user-info">
-        <div className="user-avatar">
-          <img className="user-avatar__img" src={userInfo?.avatar_url} alt="" />
-        </div>
-        <div className="user-info__text">
-          <h4 className="user-info__name">{userInfo?.name}</h4>
-          <h6 className="user-info__location">{userInfo?.location}</h6>
-          {userInfo?.company && <h5 className="user-info__company">{userInfo?.company}</h5>}
-          {userInfo?.bio && <p className="text-muted user-info__bio">"{userInfo?.bio}"</p>}
-        </div>
-      </div>
-      <UserStats repos={userInfo.public_repos} followers={userInfo.followers} following={userInfo.following} />
+      <UserInfo userData={userData} />
+      <UserStats repos={userData.public_repos} followers={userData.followers} following={userData.following} />
     </div>
   ) : null;
 };
