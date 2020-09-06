@@ -55,7 +55,7 @@ const ProfileCard = () => {
 
   return (
     <div>
-      <SearchBox />
+      <SearchBox fetchUserData={fetchUserData} />
       <section className="card">
         {userInfo && <UserInfo userInfo={userInfo} />}
         {userStats && <UserStats userStats={userStats} />}
