@@ -8,6 +8,7 @@ import './ProfileCard.css';
 const ProfileCard = () => {
   const [userInfo, setUserInfo] = useState();
   const [userStats, setUserStats] = useState();
+  const [error, setError] = useState(false);
   useEffect(() => {
     const username = 'viveksingh-01';
     fetchUserData(username);
@@ -34,18 +35,27 @@ const ProfileCard = () => {
         following,
         html_url
       });
-    } catch (error) {
-      console.log(error);
+      setError(false);
+    } catch (err) {
+      setError(true);
+      console.error(err);
     }
   };
 
   return (
     <div>
       <SearchBox fetchUserData={fetchUserData} />
-      <section className="card">
-        {userInfo && <UserInfo userInfo={userInfo} />}
-        {userStats && <UserStats userStats={userStats} />}
-      </section>
+      {error ? (
+        <div className="card__container error--card">
+          <h3 className="error__heading">Oops!</h3>
+          <p className="error__text">Sorry, we couldn't get the details for the user you're looking for...</p>
+        </div>
+      ) : (
+        <section className="card__container profile--card">
+          {userInfo && <UserInfo userInfo={userInfo} />}
+          {userStats && <UserStats userStats={userStats} />}
+        </section>
+      )}
     </div>
   );
 };
