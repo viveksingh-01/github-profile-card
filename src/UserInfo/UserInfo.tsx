@@ -16,11 +16,13 @@ const UserInfo = ({
         <img className="user-avatar__img" src={avatar_url} alt="" />
       </div>
       <div className="user-info__text">
-        <h4 className="user-info__name">{name}</h4>
-        <h6 className="user-info__location">
-          <FontAwesomeIcon icon={faMapMarkerAlt} size={'1x'} className="mr-2" />
-          {location}
-        </h6>
+        <div>
+          <h4 className="user-info__name">{name}</h4>
+          <h6 className="user-info__location">
+            <FontAwesomeIcon icon={faMapMarkerAlt} size={'1x'} className="mr-2" />
+            {location}
+          </h6>
+        </div>
         {company && (
           <h6 className="user-info__company">
             <FontAwesomeIcon icon={faBuilding} size={'1x'} className="mr-2" />
@@ -28,11 +30,11 @@ const UserInfo = ({
           </h6>
         )}
         {bio && (
-          <p className="text-muted user-info__bio">
-            <FontAwesomeIcon icon={faQuoteLeft} className="mr-2" />
-            {bio}
-            <FontAwesomeIcon icon={faQuoteRight} className="ml-2" />
-          </p>
+          <div className="bio__container">
+            <FontAwesomeIcon icon={faQuoteLeft} className="mr-2 bio__quotes" />
+            <p className="text-muted user-info__bio">{bio}</p>
+            <FontAwesomeIcon icon={faQuoteRight} className="ml-2 bio__quotes" />
+          </div>
         )}
       </div>
     </div>
