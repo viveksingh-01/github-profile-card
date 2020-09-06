@@ -19,6 +19,7 @@ const SearchBox = ({ fetchUserData }: { fetchUserData: any }) => {
           placeholder="Enter username + press Enter"
           value={username}
           onChange={e => setUsername(e.target.value)}
+          autoFocus
         />
       </form>
     </div>

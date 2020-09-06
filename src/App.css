@@ -1,8 +1,7 @@
-.profile-card__container {
+.profile--card__container {
   background-color: #eeeeee;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
   height: 100vh;
 }

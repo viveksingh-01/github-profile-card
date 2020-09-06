@@ -1,8 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import SearchBox from '../SearchBox/SearchBox';
-import UserInfo from '../UserInfo/UserInfo';
-import UserStats from '../UserStats/UserStats';
+import { SearchBox, UserInfo, UserStats } from '..';
 import './ProfileCard.css';
 
 const ProfileCard = () => {
