@@ -1,9 +1,15 @@
 .profile--card__container {
-  margin-top: 5rem;
+  margin: 1.5rem 0;
 }
 
-@media (max-width: 767px) {
+@media (min-height: 800px) {
   .profile--card__container {
-    margin-top: 2rem;
+    margin: 3rem 0;
+  }
+}
+
+@media (min-height: 1200px) {
+  .profile--card__container {
+    margin: 6rem 0;
   }
 }
