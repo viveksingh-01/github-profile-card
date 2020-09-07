@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { SearchBox, UserInfo, UserStats } from '..';
 import './ProfileCard.css';
 
@@ -41,20 +41,24 @@ const ProfileCard = () => {
   };
 
   return (
-    <div>
+    <Fragment>
       <SearchBox fetchUserData={fetchUserData} />
       {error ? (
-        <div className="card__container error--card">
+        <div className="card error--card">
           <h3 className="error__heading">Oops!</h3>
-          <p className="error__text">Sorry, we couldn't get the details for the user you're looking for...</p>
+          <p className="error__text">
+            {userInfo
+              ? `Sorry, we couldn't get the details for the user you're looking for. Please try again...`
+              : `Something went wrong. Please check your internet connection.`}
+          </p>
         </div>
       ) : (
-        <section className="card__container profile--card">
+        <section className="card profile--card">
           {userInfo && <UserInfo userInfo={userInfo} />}
           {userStats && <UserStats userStats={userStats} />}
         </section>
       )}
-    </div>
+    </Fragment>
   );
 };
 

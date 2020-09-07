@@ -1,7 +1,9 @@
 .profile--card__container {
-  background-color: #eeeeee;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
+  margin-top: 5rem;
+}
+
+@media (max-width: 767px) {
+  .profile--card__container {
+    margin-top: 2rem;
+  }
 }
