@@ -1,4 +1,13 @@
-.profile--card__container {
+:root {
+  --clr-primary-dark: #000;
+  --clr-secondary-dark: #555;
+  --clr-primary-light: #fff;
+  --clr-background: #f9f9f9;
+  --clr-accent: #386de5;
+  /* --clr-accent: #9b32dd; */
+}
+
+.app {
   margin: 1.5rem 0;
 }
 

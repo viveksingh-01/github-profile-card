@@ -5,7 +5,7 @@ import { ProfileCard } from './components';
 
 const App = () => {
   return (
-    <section className="profile--card__container">
+    <section className="app">
       <ProfileCard />
     </section>
   );
