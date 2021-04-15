@@ -3,8 +3,10 @@
   --clr-secondary-dark: #555;
   --clr-primary-light: #fff;
   --clr-background: #f9f9f9;
-  --clr-accent: #386de5;
+  /* --clr-accent: #386de5;
+  --clr-accent: #1e80d8; */
   /* --clr-accent: #9b32dd; */
+  --clr-accent: #0572d3;
 }
 
 .app {

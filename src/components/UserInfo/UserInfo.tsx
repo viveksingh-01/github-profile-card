@@ -1,5 +1,5 @@
 import { faBuilding } from '@fortawesome/free-regular-svg-icons';
-import { faMapMarkerAlt, faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import './UserInfo.css';
@@ -32,14 +32,11 @@ const UserInfo = ({
               {name}
             </a>
           </h4>
-          <h6 className="user-info__location">
-            <FontAwesomeIcon icon={faMapMarkerAlt} size={'1x'} className="mr-2" />
-            {location}
-          </h6>
+          <h6 className="user-info__location">{location}</h6>
         </div>
         {company && (
           <h6 className="user-info__company">
-            <FontAwesomeIcon icon={faBuilding} size={'1x'} className="mr-2" />
+            <FontAwesomeIcon icon={faBuilding} size={'1x'} className="mr-2" style={{ color: 'var(--clr-accent)' }} />
             {company}
           </h6>
         )}
