@@ -11,7 +11,6 @@ const ProfileCard = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    // const username = 'viveksingh-01';
     const username = 'buckyroberts';
     fetchUserData(username);
   }, []);

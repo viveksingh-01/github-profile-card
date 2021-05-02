@@ -16,7 +16,7 @@ const SearchBox = ({ fetchUserData }: { fetchUserData: any }) => {
         <input
           type="text"
           className="form-control search-box__input"
-          placeholder="Enter username + ENTER"
+          placeholder="Type username and press enter"
           value={username}
           onChange={e => setUsername(e.target.value.toLowerCase())}
           autoFocus
